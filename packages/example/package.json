@@ -1,0 +1,8 @@
+{
+  "name": "monorepo-issue-reduced-test-case",
+  "scripts": {
+    "yellow": "yellow",
+    "yellow:hack": "./../../node_modules/.bin/yellow",
+    "install": "echo \"skipping install because i'm using fake packages\""
+  }
+}

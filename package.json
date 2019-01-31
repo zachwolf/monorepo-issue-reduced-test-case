@@ -1,0 +1,13 @@
+{
+  "name": "monorepo-issue-reduced-test-case",
+  "scripts": {
+    "yellow": "yellow",
+    "install": "echo \"skipping install because i'm using fake packages\""
+  },
+  "devDependencies": {
+    "yellow": "0.0.0"
+  },
+  "dependencies": {
+    "example": "file:packages/example"
+  }
+}
