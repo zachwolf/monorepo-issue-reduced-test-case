@@ -26,7 +26,7 @@ fs.copyFileSync(
 
 fs.stat(yellowBinPath, function(error, stats) {
   // open the file (getting a file descriptor to it)
-  fs.open(yellowBinPath, "r", function(error, fd) {
+  fs.open(yellowBinPath, "r+", function(error, fd) {
     var buffer = new Buffer(stats.size);
 
     // read its contents into buffer
