@@ -1,6 +1,6 @@
 # Hello, world
 
-This is a reduced test case to reproduce an example issue we're facing.
+This is a reduced test case to reproduce an issue we're facing.
 
 ## The Setup
 
@@ -27,9 +27,11 @@ After moving dev dependencies up to the root level, packages no longer have acce
 }
 ```
 
-I've reproduced this result with a silly example package that just returns a yellow string. To set up a psuedo `node_modules`, run `npm run setup`.
+However, we're still able to import packages installed in higher level `node_modules` in our `.js` files.
 
-Then to test, at the root repo level run `npm run yellow` and then `cd packages/example && npm run yellow`. As I understand it, both should have called the same executable. However, inside a package, it causes an error:
+I've reproduced this result with an example package. Run `npm run setup` in order to generate `node_modules` with the example package.
+
+To test, at the root repo level run `npm run yellow` then `cd packages/example && npm run yellow`. As I understand it, both should have called the same executable. However, inside a `packages/example`, it causes an error:
 
 ```bash
 $ npm run yellow
@@ -52,6 +54,10 @@ npm WARN Local package.json exists, but node_modules missing, did you mean to in
 npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/.npm/_logs/2019-01-31T18_12_26_737Z-debug.log
 ```
+
+## The Hack
+
+Our current working solution is to add the `.bin` directory to our `$PATH`. It works, but it seems like incorrect behavior.
 
 ## The Summary
 
