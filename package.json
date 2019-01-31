@@ -1,8 +1,9 @@
 {
   "name": "monorepo-issue-reduced-test-case",
   "scripts": {
+    "setup": "node ./setup",
     "yellow": "yellow",
-    "install": "echo \"skipping install because i'm using fake packages\""
+    "install": "echo \"skipping install to use fake packages. Run `npm run setup` instead.\""
   },
   "devDependencies": {
     "yellow": "0.0.0"

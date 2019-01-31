@@ -1,0 +1,6 @@
+{
+  "name": "silly example",
+  "bin": {
+    "yellow": "./bin/yellow"
+  }
+}

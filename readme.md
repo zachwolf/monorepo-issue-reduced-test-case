@@ -27,7 +27,9 @@ After moving dev dependencies up to the root level, packages no longer have acce
 }
 ```
 
-I've reproduced this result with a silly example package that just returns a yellow string. At the root repo level run `npm run yellow`, then `cd packages/example && npm run yellow`. As I understand it, both should have called the same executable. However, inside a package, it causes an error:
+I've reproduced this result with a silly example package that just returns a yellow string. To set up a psuedo `node_modules`, run `npm run setup`.
+
+Then to test, at the root repo level run `npm run yellow` and then `cd packages/example && npm run yellow`. As I understand it, both should have called the same executable. However, inside a package, it causes an error:
 
 ```bash
 $ npm run yellow
